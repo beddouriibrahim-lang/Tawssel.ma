@@ -144,9 +144,62 @@
 
         footer { padding: 40px; text-align: center; border-top: 1px solid var(--soft-blue); font-weight: 700; }
 
+        /* === تحسينات الجوال === */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .contact-box { padding: 30px; }
+
+            /* تحسينات النافبار */
+            nav {
+                padding: 15px 5%;
+            }
+            .logo {
+                font-size: 1.4rem;
+            }
+            nav .btn-primary {
+                padding: 8px 15px !important;
+                font-size: 0.9rem;
+            }
+
+            /* تحسينات البطاقات */
+            .card {
+                padding: 30px 20px;
+            }
+            .card i {
+                font-size: 2.5rem;
+            }
+            .card h3 {
+                font-size: 1.3rem;
+            }
+            .card p {
+                font-size: 0.95rem;
+            }
+
+            /* تحسينات قسم الاتصال */
+            .contact-box {
+                padding: 20px;
+                gap: 30px;
+            }
+
+            .contact-info h2 {
+                font-size: 2rem;
+            }
+
+            .contact-link-item {
+                padding: 10px;
+            }
+            .contact-link-item span {
+                font-size: 0.9rem;
+                word-break: break-word;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
