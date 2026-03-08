@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawssel.ma | وكالة التسويق الرقمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="icon.jpg">
+    
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --hover-blue: #004494;
+            --soft-blue: #f0f7ff;
+            --dark-text: #1a1c1e;
+            --light-text: #636e72;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 86, 179, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 15px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--soft-blue);
+        }
+
+        .logo {
+            font-size: 1.6rem; font-weight: 900; color: var(--primary-blue);
+            text-decoration: none;
+        }
+        .logo span { color: var(--dark-text); }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: var(--dark-text);
+            font-weight: 700; transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 160px 10% 100px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--soft-blue) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900;
+            margin-bottom: 20px; color: var(--dark-text);
+        }
+        .hero h1 span { color: var(--primary-blue); }
+
+        .hero p {
+            font-size: 1.2rem; color: var(--light-text);
+            max-width: 800px; margin: 0 auto 40px;
+        }
+
+        .btn-primary {
+            padding: 15px 40px; background: var(--primary-blue);
+            color: var(--white); text-decoration: none; border-radius: 12px;
+            font-weight: 700; transition: var(--transition);
+            display: inline-block; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { 
+            background: var(--hover-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+        }
+
+        /* --- Services --- */
+        .services { padding: 100px 10%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            padding: 40px; background: var(--white); border-radius: 20px;
+            border: 1px solid var(--soft-blue); transition: var(--transition);
+            text-align: center;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: var(--shadow); border-color: var(--primary-blue); }
+        .card i { font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px; }
+
+        /* --- Contact Section --- */
+        .contact { padding: 100px 10%; background: var(--soft-blue); }
+        .contact-box {
+            background: var(--white); border-radius: 30px; padding: 50px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px; box-shadow: var(--shadow);
+        }
+
+        .contact-info h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+        
+        /* Links Styling */
+        .contact-link-item {
+            display: flex; align-items: center; gap: 15px;
+            margin-bottom: 20px; padding: 15px;
+            border-radius: 12px; transition: var(--transition);
+            text-decoration: none; color: var(--dark-text);
+            border: 1px solid transparent;
+        }
+        .contact-link-item:hover {
+            background: var(--soft-blue);
+            border-color: var(--primary-blue);
+        }
+        .contact-link-item i { font-size: 1.5rem; color: var(--primary-blue); width: 30px; }
+        .contact-link-item span { font-weight: 600; font-size: 1.1rem; }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; margin-bottom: 20px;
+            border: 1px solid #e1e4e8; border-radius: 10px; outline: none;
+            background: #fcfdfe;
+        }
+        .contact-form input:focus { border-color: var(--primary-blue); }
+
+        /* --- WhatsApp Float --- */
+        .wa-float {
+            position: fixed; bottom: 30px; left: 30px;
+            background: #25d366; color: white; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 1000; text-decoration: none; transition: 0.3s;
+        }
+        .wa-float:hover { transform: scale(1.1); }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--soft-blue); font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .contact-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Tawssel<span>.ma</span></a>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+        <a href="https://wa.me/212721731868" class="btn-primary" style="padding: 10px 25px;">ابدأ الآن</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>وكالة <span>Tawssel.ma</span><br>للتسويق الرقمي الإبداعي</h1>
+        <p>نحن شريكك الموثوق لتطوير مشروعك، من التصوير الاحترافي إلى إدارة حملاتك التسويقية بأحدث الاستراتيجيات.</p>
+        <a href="#contact" class="btn-primary">احصل على استشارة مجانية</a>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>خدماتنا الاحترافية</h2>
+            <p style="color: var(--light-text);">حلول متكاملة لنمو تجارتك</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-camera"></i>
+                <h3>تصوير المنتجات</h3>
+                <p>إبراز تفاصيل منتجاتك بجودة سينمائية تجذب الزبائن.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-video"></i>
+                <h3>فيديوهات القصيرة</h3>
+                <p>صناعة محتوى Reels و TikTok احترافي لزيادة التفاعل.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>إدارة التواصل الاجتماعي</h3>
+                <p>بناء هويتك الرقمية وتسيير صفحاتك باحترافية تامة.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>تطوير المواقع</h3>
+                <p>إنشاء Landing Pages سريعة ومحسنة لمحركات البحث.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h2>هل أنت مستعد؟</h2>
+                <p style="margin-bottom: 30px; color: var(--light-text);">تواصل معنا مباشرة عبر الروابط التالية:</p>
+                
+                <a href="tel:+212721731868" class="contact-link-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span dir="ltr">+212 721-731868</span>
+                </a>
+
+                <a href="mailto:tawssel.digital@gmail.com" class="contact-link-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>tawssel.digital@gmail.com</span>
+                </a>
+
+                <a href="https://instagram.com/tawssel.ma" target="_blank" class="contact-link-item">
+                    <i class="fab fa-instagram"></i>
+                    <span>@tawssel.ma</span>
+                </a>
+            </div>
+
+            <form class="contact-form" id="mainForm">
+                <input type="text" placeholder="الاسم الكامل" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <textarea rows="5" placeholder="كيف يمكننا مساعدتك؟" required></textarea>
+                <button type="submit" class="btn-primary" style="width: 100%;">إرسال الرسالة</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Tawssel.ma | جميع الحقوق محفوظة</p>
+    </footer>
+
+    <a href="https://wa.me/212721731868" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.getElementById('mainForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لتواصلك معنا! فريق Tawssel.ma سيتصل بك قريباً.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
