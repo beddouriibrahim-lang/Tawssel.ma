@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | Tawssel.ma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="icon.jpg">
+    
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --hover-blue: #004494;
+            --soft-blue: #f0f7ff;
+            --dark-text: #1a1c1e;
+            --light-text: #636e72;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 86, 179, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 15px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--soft-blue);
+        }
+
+        .logo {
+            font-size: 1.6rem; font-weight: 900; color: var(--primary-blue);
+            text-decoration: none;
+        }
+        .logo span { color: var(--dark-text); }
+
+        .btn-back {
+            text-decoration: none; color: var(--dark-text);
+            font-weight: 700; transition: var(--transition);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .btn-back:hover { color: var(--primary-blue); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 160px 10% 80px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--soft-blue) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 900;
+            margin-bottom: 20px; color: var(--dark-text);
+        }
+        .hero h1 span { color: var(--primary-blue); }
+
+        /* --- Content Section --- */
+        .about-content { padding: 80px 10%; }
+        
+        .content-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--soft-blue);
+            max-width: 900px;
+            margin: 0 auto 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 5px; height: 100%;
+            background: var(--primary-blue);
+        }
+
+        .content-card h2 { 
+            color: var(--primary-blue); 
+            font-size: 2rem; 
+            margin-bottom: 25px; 
+            font-weight: 800;
+        }
+
+        .content-card p { 
+            font-size: 1.2rem; 
+            color: var(--light-text); 
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* --- Values Grid --- */
+        .grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            padding: 40px; 
+            background: var(--white); 
+            border-radius: 20px;
+            border: 1px solid var(--soft-blue); 
+            transition: var(--transition);
+            text-align: center;
+        }
+        .value-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: var(--shadow); 
+            border-color: var(--primary-blue); 
+        }
+        .value-card i { 
+            font-size: 2.5rem; 
+            color: var(--primary-blue); 
+            margin-bottom: 20px; 
+        }
+        .value-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+
+        /* --- WhatsApp Float --- */
+        .wa-float {
+            position: fixed; bottom: 30px; left: 30px;
+            background: #25d366; color: white; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 1000; text-decoration: none; transition: 0.3s;
+        }
+        .wa-float:hover { transform: scale(1.1); }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--soft-blue); font-weight: 700; margin-top: 50px; }
+
+        /* --- التحسينات الجديدة للموبايل --- */
+        
+        @media (max-width: 768px) {
+            nav { 
+                padding: 10px 4%; 
+            }
+            
+            .logo { 
+                font-size: 1.3rem; 
+            }
+
+            .hero { 
+                padding: 120px 5% 40px; 
+            }
+
+            .hero h1 { 
+                font-size: 2rem; /* تصغير العنوان باش ميتقسمش بزاف */
+                line-height: 1.3;
+            }
+
+            .about-content { 
+                padding: 40px 5%; /* تقليل المساحة الجنبية */
+            }
+
+            .content-card { 
+                padding: 25px 20px; 
+                border-radius: 20px;
+                margin-bottom: 40px;
+            }
+
+            .content-card h2 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+
+            .content-card p {
+                font-size: 1rem;
+                text-align: right; /* أحسن للموبايل من justify */
+            }
+
+            .grid {
+                grid-template-columns: 1fr; /* كارد وحدة فكل سطر */
+                gap: 20px;
+            }
+
+            .value-card {
+                padding: 30px 20px;
+            }
+
+            .wa-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                left: 20px;
+                font-size: 25px;
+            }
+
+            footer {
+                padding: 30px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* إضافة لمسة احترافية للصور والنصوص */
+        strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Tawssel<span>.ma</span></a>
+        <a href="index.html" class="btn-back">
+            <i class="fas fa-arrow-right"></i> العودة للرئيسية
+        </a>
+    </nav>
+
+    <header class="hero">
+        <h1>شكون <span>حنا؟</span></h1>
+        <p>تعرف على القصة والروح اللي كتحرك Tawssel.ma</p>
+    </header>
+
+    <section class="about-content">
+        <div class="content-card">
+           <h2>مهمتنا</h2>
+
+<p>
+في <strong>Tawssel.ma</strong> كنآمنو أن كل مشروع صغير يقدر يكون عندو حضور كبير فالأنترنت.
+هدفنا هو مساعدة البوتيكات والمشاريع باش يبانوا بطريقة احترافية ويقربو أكثر للزبناء ديالهم.
+</p>
+
+<p>
+كنجمعو بين الإبداع فالتصوير وصناعة المحتوى، وبين تصميم مواقع ويب عصرية وسريعة،
+باش المشروع ديالك يبان بثقة ويعطي صورة قوية على العلامة ديالك.
+</p>
+
+<p>
+ماشي غير كنصايبو مواقع… حنا كنساعدو المشاريع باش تكبر وتوصل لزبناء جداد.
+</p>
+<h2>رؤيتنا</h2>
+
+<p>
+رؤيتنا هي نكونو من بين الوكالات الرقمية اللي كتعاون المشاريع المغربية
+باش تدخل بقوة للعالم الرقمي وتستافد من فرص الأنترنت.
+</p>
+        </div>
+        
+
+        <div class="grid">
+            <div class="value-card">
+                <i class="fas fa-heart"></i>
+                <h3>الشغف</h3>
+                <p>كنخدمو على كل مشروع وكأنه مشروعنا الخاص، حيت نجاحك هو نجاحنا.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-bolt"></i>
+                <h3>السرعة</h3>
+                <p>عالم الديجيتال مكاتسناش، داكشي علاش التنفيذ السريع والجودة هما أولويتنا.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-users"></i>
+                <h3>القرب</h3>
+                <p>كنسمعو ليك مزيان، كنفهمو احتياجاتك وكنلقاو ليك الحل اللي كيناسب ميزانيتك.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Tawssel.ma | جميع الحقوق محفوظة</p>
+    </footer>
+
+    <a href="https://wa.me/212721731868" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
